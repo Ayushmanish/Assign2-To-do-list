@@ -14,9 +14,7 @@ export function Filter_by(props) {
         )
     }
     else if (props.sort === 'newest to oldest') {
-        sortedTaskArr.sort((b, a) => {
-            new Date(a.date) - new Date(b.date)
-        })
+        sortedTaskArr.sort((b, a) => new Date(a.date) - new Date(b.date))
         return (
             <ul>
                 {sortedTaskArr.map((element, index) => (
@@ -28,9 +26,7 @@ export function Filter_by(props) {
         )
     }
     else {
-        sortedTaskArr.sort((a, b) => {
-            new Date(a.date) - new Date(b.date)
-        })
+        sortedTaskArr.sort((a, b) => new Date(a.date) - new Date(b.date))
         return (
             <ul>
                 {sortedTaskArr.map((element, index) => (
@@ -60,9 +56,7 @@ export function Marked(props) {
         )
     }
     else if (props.sort === "newest to oldest") {
-        sortedMarkedArr.sort((b, a) => {
-            new Date(a.date) - new Date(b.date)
-        })
+        sortedMarkedArr.sort((b, a) => new Date(a.date) - new Date(b.date))
         return (
             <ul>
                 {sortedMarkedArr.map((element, index) => (
@@ -74,9 +68,7 @@ export function Marked(props) {
         )
     }
     else {
-        sortedMarkedArr.sort((a, b) => {
-            new Date(a.date) - new Date(b.date)
-        })
+        sortedMarkedArr.sort((a, b) => new Date(a.date) - new Date(b.date))
         return (
             <ul>
                 {sortedMarkedArr.map((element, index) => (
@@ -106,9 +98,7 @@ export function Unmarked(props) {
         )
     }
     else if (props.sort === "newest to oldest") {
-        sortedUnMarkedArr.sort((b, a) => {
-            new Date(a.date) - new Date(b.date)
-        })
+        sortedUnMarkedArr.sort((b, a) => new Date(a.date) - new Date(b.date))
         return (
             <ul>
                 {sortedUnMarkedArr.map((element, index) => (
@@ -120,9 +110,7 @@ export function Unmarked(props) {
         )
     }
     else {
-        sortedUnMarkedArr.sort((a, b) => {
-            new Date(a.date) - new Date(b.date)
-        })
+        sortedUnMarkedArr.sort((a, b) => new Date(a.date) - new Date(b.date))
         return (
             <ul>
                 {sortedUnMarkedArr.map((element, index) => (

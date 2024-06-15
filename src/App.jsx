@@ -87,7 +87,7 @@ function App() {
       <div className="form">
         <form onSubmit={handleSubmit}>
           <input onChange={handleChange} type="text" name="task" value={inputTask.item} placeholder="Assign task" />
-          {error && <span>{error}</span>}
+          {error && <span className="error-message">{error}</span>}
           <button name="submit" type="submit">Create</button>
         </form>
         <div className="select-container">
