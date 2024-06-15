@@ -14,12 +14,7 @@ function App() {
   const [sort, setSort] = useState("Sort By")
 
   useEffect(() => {
-    const storedTasks = []
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i)
-      const task = JSON.parse(localStorage.getItem(key))
-      storedTasks.push(task)
-    }
+    const storedTasks = JSON.parse(localStorage.getItem("tasks"))
     setTaskArr(storedTasks)
   }, []);
 
@@ -40,9 +35,7 @@ function App() {
       inputTask.date = date
       setTaskArr((preItems) => {
         const updatedTasks = [...preItems, inputTask]
-        updatedTasks.map((element, index) => {
-          localStorage.setItem(index, JSON.stringify(element))
-        })
+        localStorage.setItem("tasks", JSON.stringify(updatedTasks))
         return updatedTasks
       })
       setInputTask({ item: "", marked: "" })
@@ -54,11 +47,7 @@ function App() {
       const updatedTasks = preItems.filter((element, index) => {
         return index !== id
       })
-      localStorage.clear()
-
-      updatedTasks.forEach((element, index) => {
-        localStorage.setItem(index, JSON.stringify(element))
-      })
+      localStorage.setItem("tasks", JSON.stringify(updatedTasks))
       return updatedTasks
     })
   }
@@ -69,7 +58,7 @@ function App() {
     setTaskArr((preItems) => {
       return [...preItems]
     })
-    localStorage.setItem(index, JSON.stringify(element))
+    localStorage.setItem("tasks", JSON.stringify(taskArr))
   }
 
   function handleFilter(event) {
@@ -123,3 +112,4 @@ function App() {
   )
 }
 export default App
+
