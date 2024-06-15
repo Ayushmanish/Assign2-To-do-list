@@ -93,7 +93,7 @@ export function Unmarked(props) {
     const unMarkedArr = props.taskArr.filter((element, index) => {
         return element.marked === false
     })
-    sortedUnMarkedArr = [...unMarkedArr]
+    let sortedUnMarkedArr = [...unMarkedArr]
     if (props.sort === "Sort By") {
         return (
             <ul>

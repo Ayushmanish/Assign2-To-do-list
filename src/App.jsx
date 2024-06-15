@@ -90,16 +90,18 @@ function App() {
           {error && <span>{error}</span>}
           <button name="submit" type="submit">Create</button>
         </form>
-        <select onChange={handleFilter}>
-          <option>Filter By</option>
-          <option>marked</option>
-          <option>unmarked</option>
-        </select>
-        <select onChange={handleSort}>
-          <option>Sort By</option>
-          <option>newest to oldest</option>
-          <option>oldest to newest</option>
-        </select>
+        <div className="select-container">
+          <select onChange={handleFilter}>
+            <option>Filter By</option>
+            <option>marked</option>
+            <option>unmarked</option>
+          </select>
+          <select onChange={handleSort}>
+            <option>Sort By</option>
+            <option>newest to oldest</option>
+            <option>oldest to newest</option>
+          </select>
+        </div>
       </div>
       <div>
         {filter === "Filter By" ?
